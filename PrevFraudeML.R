@@ -10,6 +10,7 @@
 
 ### Librerías requeridas
 library(caret)
+library(randomForest)
 #library(missForest)
 
 ### Lectura de la base de datos ###
@@ -89,11 +90,11 @@ for(i in 1:n2){
 # Boxplot varibales num vs respuesta
 par(mfrow=c(2,4))
 for(i in 1:n1){
-    boxplot(num1[,i]~data$Fraude,main=names(num1)[i],outline=F)
+    boxplot(num1[,i]~data$Fraude,main=names(num1)[i])
 }
 par(mfrow=c(2,5))
 for(i in 1:n2){
-    boxplot(num2[,i]~data$Fraude,main=names(num2)[i],outline=F)
+    boxplot(num2[,i]~data$Fraude,main=names(num2)[i])
 }
 
 # Misma gráfica sin considerar outliers
